@@ -1,0 +1,73 @@
+@use "../../scss/index.scss";
+
+.footertop {
+  background-color: index.$grey-dark;
+
+  &__container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 120px;
+
+    padding-top: 70px;
+    padding-bottom: 80px;
+
+    @media (max-width: 1250px) {
+      gap: 32px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 270px;
+
+    &:first-child {
+      margin-right: auto;
+    }
+  }
+
+  &__logo {
+    width: 216px;
+    height: 36.376px;
+
+    margin-bottom: 29px;
+  }
+
+  &__download {
+    width: 155px;
+    height: 46px;
+
+    margin: 13px 0 33px;
+  }
+
+  &__title {
+    margin-bottom: 26px;
+
+    color: index.$grey;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  &__btn {
+    margin-bottom: 26px;
+
+    padding: 13px 17px;
+
+    color: index.$white;
+    font-weight: 700;
+
+    border-radius: 3px;
+    border: 1px solid index.$white;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}

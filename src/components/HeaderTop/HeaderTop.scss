@@ -1,0 +1,73 @@
+@use "../../scss/index.scss";
+
+.headertop {
+  background-color: index.$grey-light;
+
+  &__container {
+    display: flex;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 56px;
+
+    margin-left: auto;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      justify-content: space-between;
+      margin-left: 0;
+    }
+
+  }
+
+  &__block {
+    display: flex;
+    gap: 30px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    @media (max-width: 500px) {
+      &:first-child {
+        display: none;
+      }
+
+      &:last-child {
+        width: 100%;
+      }
+    }
+  }
+
+  &__btn {
+    font-size: 15px;
+
+    font-weight: 700;
+    line-height: 24px;
+
+    color: index.$white;
+
+    &_primary {
+      padding: 6px 14px;
+
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 12px;
+
+      border-radius: 3px;
+      background: index.$btn-primary;
+
+    @media (max-width: 500px) {
+      margin-left: auto;
+    }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .social {
+      display: none;
+    }
+  }
+}

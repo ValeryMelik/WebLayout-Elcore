@@ -1,0 +1,11 @@
+mixin svg(id, parent)
+  svg(class=`${parent}__${id} ${parent}__svg img-reset`): use(xlink:href=`img/sprite.svg#${id}`)
+
+mixin ItemLink(itemClass, linkClass, text, idLink)
+  li(class=itemClass)
+    if (!idLink)
+      a.link-reset(class=linkClass href="#")=text
+    else
+      a.link-reset(class=linkClass href="#" id=idLink)=text
+
+

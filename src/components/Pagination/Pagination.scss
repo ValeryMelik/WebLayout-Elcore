@@ -1,0 +1,33 @@
+@use "../../scss/index.scss";
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  margin-top: 80px;
+
+  &__page {
+    font-size: 20px;
+    line-height: 32px;
+
+    &_active {
+      color: index.$white;
+
+      border-radius: 3px;
+      background-color: index.$btn-primary;
+
+      padding: 0 6px;
+    }
+  }
+
+  &__control {
+    width: 8px;
+    height: 14px;
+
+    &_active {
+      fill: index.$btn-primary;
+    }
+  }
+}

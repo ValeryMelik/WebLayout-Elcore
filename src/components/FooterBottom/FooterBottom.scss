@@ -1,0 +1,39 @@
+@use "../../scss/index.scss";
+
+.footerbottom {
+  background-color: index.$grey-light;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      flex-flow: row-reverse;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__link {
+    color: index.$grey-link;
+    font-size: 16px;
+  }
+
+  &__small {
+    display: none;
+    color: index.$grey-link;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+}

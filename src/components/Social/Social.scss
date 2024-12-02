@@ -1,0 +1,19 @@
+@use "../../scss/index.scss";
+
+.social {
+  display: flex;
+  gap: 22px;
+
+  align-items: center;
+
+  &__svg {
+    width: 17px;
+    height: 17px;
+
+    fill: index.$grey-svg;
+  }
+
+  @media (max-width: 500px) {
+    gap: 12px;
+  }
+}

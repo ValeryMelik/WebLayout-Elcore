@@ -1,0 +1,87 @@
+@use "./variables";
+
+
+@mixin unvisible {
+  opacity: 0;
+  visibility: hidden;
+
+  transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+  &_visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@mixin visible {
+  opacity: 1;
+  visibility: visible;
+
+  transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+  &_visible {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin tile {
+  display: flex;
+
+  background-color: rgba(variables.$white, 0.2);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 2px solid rgba(variables.$content-primary, 0.7);
+  // backdrop-filter: blur(12px);
+}
+
+@mixin fadeVisibility($duration: 0.3s, $timing: ease-in-out) {
+  &_visible {
+    animation: appearance #{$duration} #{$timing} forwards;
+  }
+
+  &_hidden {
+    animation: disappearance #{$duration} #{$timing} forwards;
+  }
+
+  @keyframes appearance {
+    from {
+      opacity: 0;
+      visibility: hidden;
+    }
+    to {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @keyframes disappearance {
+    from {
+      opacity: 1;
+      visibility: visible;
+    }
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+
+@mixin gridTemplate {
+  display: grid;
+
+  @for $i from 1 through 16 {
+    li:nth-child(#{$i}) {
+      grid-area: cell-#{$i};
+    }
+  }
+}
+

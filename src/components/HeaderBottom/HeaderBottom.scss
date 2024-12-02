@@ -1,0 +1,17 @@
+@use "../../scss/index.scss";
+
+.headerbottom {
+  background-color: index.$grey-light;
+
+  &__container {
+    display: flex;
+  }
+
+  &__nav {
+    display: flex;
+  }
+
+  &__slash {
+    margin: 0 10px;
+  }
+}
